@@ -1,0 +1,4 @@
+name,website,domain,country,city,region,business_category,gmaps_url,gmaps_rating,gmaps_review_count,public_email,phone,careers_page,contact_page,about_page,linkedin,github_org,remote_mention,backend_mention,internship_mention,junior_mention,tech_stack,discovery_source,date_discovered,first_seen,new_today,match_score
+GitLab,https://about.gitlab.com,about.gitlab.com,USA,San Francisco,USA,DevTools,,,,,,,,,,,False,False,False,False,,sample,2026-08-01,2026-08-01,False,0
+PostHog,https://posthog.com,posthog.com,UK,London,Europe,Analytics,,,,,,,,,,,False,False,False,False,,sample,2026-08-01,2026-08-01,False,0
+Sentry,https://sentry.io,sentry.io,USA,San Francisco,USA,DevTools,,,,,,,,,,,False,False,False,False,,sample,2026-08-01,2026-08-01,False,0

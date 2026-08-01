@@ -1,0 +1,2 @@
+# Paste your resume text here. It is kept as a human-readable companion to skills.yaml.
+# The deterministic scorer uses the keywords in skills.yaml.

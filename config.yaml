@@ -1,0 +1,9 @@
+regions:
+  usa_cities: [San Francisco, New York, Austin, Boston, Seattle, Denver]
+  eu_cities: [London, Berlin, Amsterdam, Paris, Dublin, Lisbon, Stockholm]
+# Free OpenStreetMap/Overpass discovery: one query per city up to this cap.
+osm_daily_query_cap: 13
+crawl_timeout_seconds: 8
+crawl_max_concurrency: 10
+crawl_retries: 1
+output_dir: ./output
