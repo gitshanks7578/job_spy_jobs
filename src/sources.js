@@ -37,24 +37,22 @@ export async function discoverHackerNews(config) {
 }
 
 export async function discoverYc(config) {
-  const base = 'https://www.ycombinator.com';
-  const industries = ['Developer%20Tools', 'Infrastructure', 'B2B', 'Artificial%20Intelligence'];
-  const pages = await Promise.all(industries.map((industry) => timeoutFetch(`${base}/companies/industry/${industry}`, {}, 10000).then((res) => res.text()).catch(() => '')));
-  const slugs = [...new Set(pages.flatMap((html) => [...html.matchAll(/href=["'](\/companies\/(?!industry\/)[^"'?#]+)/gi)].map((match) => match[1])))].slice(0, config.limits.ycCompanies);
-  const profiles = await Promise.all(slugs.map(async (slug) => {
-    const html = await timeoutFetch(`${base}${slug}`, {}, 10000).then((res) => res.text()).catch(() => '');
-    const text = htmlToText(html);
-    const city = [...config.regions.usaCities, ...config.regions.europeanCities].find((item) => text.toLowerCase().includes(item.toLowerCase()));
-    if (!city) return null;
-    const region = config.regions.usaCities.includes(city) ? 'USA' : 'Europe';
-    const website = [...html.matchAll(/href=["'](https?:\/\/[^"']+)/gi)]
-      .map((match) => match[1])
-      // YC profiles include social and legacy Google+ links before the company
-      // site in some pages; none of those belong in the crawl queue.
-      .find(isCompanyUrl);
-    if (!website) return null;
-    const title = html.match(/<title>\s*(.*?)\s*-\s*Y Combinator/i)?.[1]?.replace(/<[^>]+>/g, '').trim() ?? slug.split('/').pop().replaceAll('-', ' ');
-    return { name: title, website, domain: domainName(website), city, region, source: 'yc' };
-  }));
-  return profiles.filter(Boolean);
+  // This is a community-maintained daily JSON mirror of YC's public directory.
+  // Unlike page scraping, it supplies canonical websites, locations and hiring
+  // flags directly, so social links cannot accidentally enter the crawl queue.
+  const companies = await timeoutFetch('https://yc-oss.github.io/api/companies/hiring.json', {}, 15000).then((res) => res.json());
+  return companies
+    .filter((company) => company.website && isCompanyUrl(company.website))
+    .map((company) => {
+      const location = company.all_locations ?? '';
+      const city = [...config.regions.usaCities, ...config.regions.europeanCities]
+        .find((item) => location.toLowerCase().includes(item.toLowerCase())) ?? '';
+      const us = /united states|\busa\b/i.test(location) || company.regions?.includes('United States of America');
+      const europe = /united kingdom|ireland|germany|netherlands|france|spain|portugal|sweden|denmark|finland|poland|estonia|switzerland|austria|europe/i.test(location) || company.regions?.some((region) => /europe/i.test(region));
+      const region = us ? 'USA' : europe ? 'Europe' : '';
+      return { name: company.name, website: company.website, domain: domainName(company.website), city, region, source: 'yc', launchedAt: company.launched_at ?? 0 };
+    })
+    .filter((company) => company.region)
+    .sort((a, b) => b.launchedAt - a.launchedAt)
+    .slice(0, config.limits.ycCompanies);
 }
