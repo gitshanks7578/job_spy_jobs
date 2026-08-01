@@ -4,6 +4,10 @@ const timeoutFetch = async (url, options = {}, timeout = 10000) => {
   return response;
 };
 const domainName = (url) => new URL(url).hostname.replace(/^www\./, '');
+const nonCompanyHost = /(?:ycombinator|linkedin|twitter|x\.com|github|youtube|facebook|instagram|tiktok|plus\.google|google\.com|gstatic|maps\.google|apple\.com|play\.google)/i;
+const isCompanyUrl = (url) => {
+  try { return !nonCompanyHost.test(new URL(url).hostname); } catch { return false; }
+};
 const htmlToText = (html) => html.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ');
 const regionFromText = (text) => {
   const value = ` ${text.toLowerCase()} `;
@@ -23,7 +27,7 @@ export async function discoverHackerNews(config) {
   return comments.flatMap((comment) => {
     const text = htmlToText(comment?.text ?? '');
     const region = regionFromText(text);
-    const url = text.match(/https?:\/\/[^\s"<>]+/i)?.[0]?.replace(/[.,)]+$/, '');
+    const url = [...text.matchAll(/https?:\/\/[^\s"<>]+/gi)].map((match) => match[0].replace(/[.,)]+$/, '')).find(isCompanyUrl);
     if (!region || !url) return [];
     try {
       const name = text.slice(0, text.indexOf(url)).split(/\s+(?:is|are|[-—|])/i)[0].trim().slice(0, 100) || domainName(url);
@@ -43,7 +47,11 @@ export async function discoverYc(config) {
     const city = [...config.regions.usaCities, ...config.regions.europeanCities].find((item) => text.toLowerCase().includes(item.toLowerCase()));
     if (!city) return null;
     const region = config.regions.usaCities.includes(city) ? 'USA' : 'Europe';
-    const website = [...html.matchAll(/href=["'](https?:\/\/[^"']+)/gi)].map((match) => match[1]).find((url) => !/(ycombinator|linkedin|twitter|x\.com|github|youtube|facebook)/i.test(new URL(url).hostname));
+    const website = [...html.matchAll(/href=["'](https?:\/\/[^"']+)/gi)]
+      .map((match) => match[1])
+      // YC profiles include social and legacy Google+ links before the company
+      // site in some pages; none of those belong in the crawl queue.
+      .find(isCompanyUrl);
     if (!website) return null;
     const title = html.match(/<title>\s*(.*?)\s*-\s*Y Combinator/i)?.[1]?.replace(/<[^>]+>/g, '').trim() ?? slug.split('/').pop().replaceAll('-', ' ');
     return { name: title, website, domain: domainName(website), city, region, source: 'yc' };
