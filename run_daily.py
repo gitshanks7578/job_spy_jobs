@@ -51,7 +51,7 @@ async def crawl_company(company, config, skills, semaphore):
         html, error = await fetch(company.website, int(config["crawl_timeout_seconds"]), int(config["crawl_retries"]))
     if error: return [], {"domain": company.domain, "reason": error}
     pages = [(company.website, html)]
-    for url in find_pages(company.website, html):
+    for url in find_pages(company.website, html, int(config.get("crawl_pages_per_company", 3))):
         async with semaphore: page_html, _ = await fetch(url, int(config["crawl_timeout_seconds"]), int(config["crawl_retries"]))
         if page_html: pages.append((url, page_html))
     merged = " ".join(text_from_html(page) for _, page in pages)
@@ -81,8 +81,12 @@ async def main(sample=False):
             except Exception as exc: print(f"{source}: skipped ({exc})")
     raw_maps = [company.row() for company in companies if company.discovery_source == "openstreetmap"]
     companies, duplicate_count = dedupe(companies); tag_new(companies)
+    # Keep every discovered company in the CSV, but crawl only the top bounded
+    # slice. This prevents a large HN thread from turning into thousands of
+    # website requests in one daily run.
+    crawlable = companies[:int(config.get("crawl_company_cap", 40))]
     semaphore = asyncio.Semaphore(int(config["crawl_max_concurrency"]))
-    results = await asyncio.gather(*(crawl_company(c, config, skills, semaphore) for c in companies))
+    results = await asyncio.gather(*(crawl_company(c, config, skills, semaphore) for c in crawlable))
     jobs, failed = [], []
     for job_rows, failure in results:
         jobs.extend(job_rows)

@@ -1,1 +1,31 @@
-domain,reason
+domain,url,reason
+"about.gitlab.com","https://about.gitlab.com","page.goto: net::ERR_EMPTY_RESPONSE at https://about.gitlab.com/
+Call log:
+[2m  - navigating to ""https://about.gitlab.com/"", waiting until ""load""[22m
+
+    at gotoExtended (C:\Users\MSI INDIA\Desktop\auto\node_modules\.pnpm\@crawlee+playwright@3.17.0_playwright@1.62.1\node_modules\@crawlee\playwright\internals\utils\playwright-utils.js:165:17)
+    at PlaywrightCrawler._navigationHandler (C:\Users\MSI INDIA\Desktop\auto\node_modules\.pnpm\@crawlee+playwright@3.17.0_playwright@1.62.1\node_modules\@crawlee\playwright\internals\playwright-crawler.js:123:52)
+    at PlaywrightCrawler._handleNavigation (C:\Users\MSI INDIA\Desktop\auto\node_modules\.pnpm\@crawlee+browser@3.17.0_playwright@1.62.1\node_modules\@crawlee\browser\internals\browser-crawler.js:334:52)
+    at async PlaywrightCrawler._runRequestHandler (C:\Users\MSI INDIA\Desktop\auto\node_modules\.pnpm\@crawlee+browser@3.17.0_playwright@1.62.1\node_modules\@crawlee\browser\internals\browser-crawler.js:260:13)
+    at async PlaywrightCrawler._runRequestHandler (C:\Users\MSI INDIA\Desktop\auto\node_modules\.pnpm\@crawlee+playwright@3.17.0_playwright@1.62.1\node_modules\@crawlee\playwright\internals\playwright-crawler.js:120:9)
+    at async wrap (C:\Users\MSI INDIA\Desktop\auto\node_modules\.pnpm\@apify+timeout@0.3.5\node_modules\@apify\timeout\cjs\index.cjs:54:21)"
+"posthog.com","https://posthog.com","page.goto: net::ERR_EMPTY_RESPONSE at https://posthog.com/
+Call log:
+[2m  - navigating to ""https://posthog.com/"", waiting until ""load""[22m
+
+    at gotoExtended (C:\Users\MSI INDIA\Desktop\auto\node_modules\.pnpm\@crawlee+playwright@3.17.0_playwright@1.62.1\node_modules\@crawlee\playwright\internals\utils\playwright-utils.js:165:17)
+    at PlaywrightCrawler._navigationHandler (C:\Users\MSI INDIA\Desktop\auto\node_modules\.pnpm\@crawlee+playwright@3.17.0_playwright@1.62.1\node_modules\@crawlee\playwright\internals\playwright-crawler.js:123:52)
+    at PlaywrightCrawler._handleNavigation (C:\Users\MSI INDIA\Desktop\auto\node_modules\.pnpm\@crawlee+browser@3.17.0_playwright@1.62.1\node_modules\@crawlee\browser\internals\browser-crawler.js:334:52)
+    at async PlaywrightCrawler._runRequestHandler (C:\Users\MSI INDIA\Desktop\auto\node_modules\.pnpm\@crawlee+browser@3.17.0_playwright@1.62.1\node_modules\@crawlee\browser\internals\browser-crawler.js:260:13)
+    at async PlaywrightCrawler._runRequestHandler (C:\Users\MSI INDIA\Desktop\auto\node_modules\.pnpm\@crawlee+playwright@3.17.0_playwright@1.62.1\node_modules\@crawlee\playwright\internals\playwright-crawler.js:120:9)
+    at async wrap (C:\Users\MSI INDIA\Desktop\auto\node_modules\.pnpm\@apify+timeout@0.3.5\node_modules\@apify\timeout\cjs\index.cjs:54:21)"
+"sentry.io","https://sentry.io","page.goto: net::ERR_EMPTY_RESPONSE at https://sentry.io/
+Call log:
+[2m  - navigating to ""https://sentry.io/"", waiting until ""load""[22m
+
+    at gotoExtended (C:\Users\MSI INDIA\Desktop\auto\node_modules\.pnpm\@crawlee+playwright@3.17.0_playwright@1.62.1\node_modules\@crawlee\playwright\internals\utils\playwright-utils.js:165:17)
+    at PlaywrightCrawler._navigationHandler (C:\Users\MSI INDIA\Desktop\auto\node_modules\.pnpm\@crawlee+playwright@3.17.0_playwright@1.62.1\node_modules\@crawlee\playwright\internals\playwright-crawler.js:123:52)
+    at PlaywrightCrawler._handleNavigation (C:\Users\MSI INDIA\Desktop\auto\node_modules\.pnpm\@crawlee+browser@3.17.0_playwright@1.62.1\node_modules\@crawlee\browser\internals\browser-crawler.js:334:52)
+    at async PlaywrightCrawler._runRequestHandler (C:\Users\MSI INDIA\Desktop\auto\node_modules\.pnpm\@crawlee+browser@3.17.0_playwright@1.62.1\node_modules\@crawlee\browser\internals\browser-crawler.js:260:13)
+    at async PlaywrightCrawler._runRequestHandler (C:\Users\MSI INDIA\Desktop\auto\node_modules\.pnpm\@crawlee+playwright@3.17.0_playwright@1.62.1\node_modules\@crawlee\playwright\internals\playwright-crawler.js:120:9)
+    at async wrap (C:\Users\MSI INDIA\Desktop\auto\node_modules\.pnpm\@apify+timeout@0.3.5\node_modules\@apify\timeout\cjs\index.cjs:54:21)"

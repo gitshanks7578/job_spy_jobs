@@ -12,7 +12,10 @@ osm_daily_query_cap: 3
 enabled_sources: [yc_directory, hn_whos_hiring]
 yc_daily_company_cap: 30
 hn_comment_cap: 150
-crawl_timeout_seconds: 8
+﻿# Hard limits keep a daily run predictable on slow or blocked sites.
+crawl_timeout_seconds: 5
 crawl_max_concurrency: 10
 crawl_retries: 1
+crawl_pages_per_company: 3
+crawl_company_cap: 40
 output_dir: ./output

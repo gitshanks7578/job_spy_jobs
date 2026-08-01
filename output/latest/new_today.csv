@@ -1,1 +1,4 @@
-name,website,domain,country,city,region,business_category,gmaps_url,gmaps_rating,gmaps_review_count,public_email,phone,careers_page,contact_page,about_page,linkedin,github_org,remote_mention,backend_mention,internship_mention,junior_mention,tech_stack,discovery_source,date_discovered,first_seen,new_today,match_score
+name,website,domain,city,region,source,careersPage,emails,phones,linkedin,github,matchScore,matchedKeywords,firstSeen,newToday
+"GitLab","https://about.gitlab.com","about.gitlab.com","San Francisco","USA","sample","","","","","","0","","2026-08-01","true"
+"PostHog","https://posthog.com","posthog.com","London","Europe","sample","","","","","","0","","2026-08-01","true"
+"Sentry","https://sentry.io","sentry.io","San Francisco","USA","sample","","","","","","0","","2026-08-01","true"

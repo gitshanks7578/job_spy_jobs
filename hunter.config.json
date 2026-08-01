@@ -1,0 +1,20 @@
+{
+  "regions": {
+    "usaCities": ["San Francisco", "New York", "Austin", "Boston", "Seattle", "Denver", "Chicago", "Los Angeles", "Miami", "Atlanta", "Raleigh", "Washington DC"],
+    "europeanCities": ["London", "Manchester", "Dublin", "Berlin", "Munich", "Hamburg", "Amsterdam", "Paris", "Lyon", "Madrid", "Barcelona", "Lisbon", "Stockholm", "Copenhagen", "Helsinki", "Warsaw", "Tallinn", "Zurich", "Vienna"]
+  },
+  "sources": ["yc", "hackerNews"],
+  "limits": {
+    "ycCompanies": 30,
+    "hnComments": 120,
+    "companiesToCrawl": 30,
+    "pagesPerCompany": 2,
+    "maxRequests": 80,
+    "maxConcurrency": 5,
+    "requestTimeoutSeconds": 10
+  },
+  "skills": {
+    "mustHave": ["backend", "intern", "internship", "junior", "entry-level", "graduate", "remote"],
+    "techStack": ["node.js", "express", "typescript", "javascript", "sql", "postgresql", "mysql", "mongodb", "prisma", "rest api", "jwt", "oauth", "redis", "llm", "git"]
+  }
+}
