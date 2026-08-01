@@ -30,7 +30,11 @@ def read_config(path="config.yaml"):
             key, value = line.split(":", 1); value = value.strip()
             target = data[section] if raw.startswith(" ") and section else data
             try: target[key.strip()] = ast.literal_eval(value)
-            except (ValueError, SyntaxError): target[key.strip()] = value.strip('"')
+            except (ValueError, SyntaxError):
+                # Support the compact unquoted YAML lists used in config.yaml.
+                if value.startswith("[") and value.endswith("]"):
+                    target[key.strip()] = [item.strip().strip("'\"") for item in value[1:-1].split(",") if item.strip()]
+                else: target[key.strip()] = value.strip('"')
         return data
 
 def sample_companies():

@@ -1,8 +1,12 @@
 regions:
-  usa_cities: [San Francisco, New York, Austin, Boston, Seattle, Denver]
-  eu_cities: [London, Berlin, Amsterdam, Paris, Dublin, Lisbon, Stockholm]
+  usa_cities: [San Francisco, New York, Austin, Boston, Seattle, Denver, Chicago, Los Angeles, Miami, Atlanta, Raleigh, Washington DC]
+  # Broad coverage across UK, Ireland, Germany, Netherlands, France, Spain,
+  # Portugal, Sweden, Denmark, Finland, Poland, Estonia, Switzerland and Austria.
+  eu_cities: [London, Manchester, Dublin, Berlin, Munich, Hamburg, Amsterdam, Paris, Lyon, Madrid, Barcelona, Lisbon, Stockholm, Copenhagen, Helsinki, Warsaw, Tallinn, Zurich, Vienna]
+  eu_countries: [United Kingdom, Ireland, Germany, Netherlands, France, Spain, Portugal, Sweden, Denmark, Finland, Poland, Estonia, Switzerland, Austria]
 # Free OpenStreetMap/Overpass discovery: one query per city up to this cap.
-osm_daily_query_cap: 13
+# One OpenStreetMap query runs per city. Start modestly to respect the public API.
+osm_daily_query_cap: 31
 crawl_timeout_seconds: 8
 crawl_max_concurrency: 10
 crawl_retries: 1
