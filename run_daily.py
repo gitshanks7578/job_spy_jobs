@@ -13,7 +13,7 @@ from storage.csv_writer import write_csv
 from storage.dedupe import dedupe
 from storage.state import tag_new
 
-SOURCES = ["google_maps", "yc_directory", "producthunt", "hn_whos_hiring", "accelerators", "directories"]
+SOURCES = ["yc_directory", "hn_whos_hiring", "google_maps", "producthunt", "accelerators", "directories"]
 
 def read_config(path="config.yaml"):
     # Config intentionally only needs simple scalar/list YAML; PyYAML is optional.
@@ -76,7 +76,7 @@ async def main(sample=False):
     config, skills = read_config(), load_skills()
     companies = sample_companies() if sample else []
     if not sample:
-        for source in SOURCES:
+        for source in config.get("enabled_sources", SOURCES):
             try: companies.extend(importlib.import_module(f"sources.{source}").discover(config))
             except Exception as exc: print(f"{source}: skipped ({exc})")
     raw_maps = [company.row() for company in companies if company.discovery_source == "openstreetmap"]

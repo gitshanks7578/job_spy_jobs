@@ -21,7 +21,7 @@ def discover(config: dict) -> list[Company]:
         try:
             request = Request("https://overpass-api.de/api/interpreter", data=urlencode({"data": overpass}).encode(),
                               headers={"User-Agent": "CompanyHunterMVP/1.0 (personal job research)"})
-            data = json.load(urlopen(request, timeout=35))
+            data = json.load(urlopen(request, timeout=12))
         except Exception:
             continue
         for item in data.get("elements", []):
