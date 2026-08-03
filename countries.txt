@@ -1,0 +1,281 @@
+========================================
+TIER 1 (Highest Priority)
+========================================
+
+United States
+Canada
+United Kingdom
+Ireland
+Netherlands
+
+========================================
+TIER 2 (Excellent English Tech Markets)
+========================================
+
+Germany
+Sweden
+Denmark
+Norway
+Finland
+Estonia
+Poland
+Portugal
+Belgium
+Luxembourg
+Austria
+Switzerland
+Czech Republic
+
+========================================
+TIER 3 (Strong International Hiring)
+========================================
+
+Australia
+New Zealand
+Singapore
+United Arab Emirates
+
+========================================
+OPTIONAL (If time permits)
+========================================
+
+France
+Spain
+Italy
+
+========================================
+USA CITIES
+========================================
+
+Remote
+San Francisco, California
+San Jose, California
+Palo Alto, California
+Mountain View, California
+Sunnyvale, California
+Santa Clara, California
+Menlo Park, California
+Redwood City, California
+Fremont, California
+Oakland, California
+
+Seattle, Washington
+Bellevue, Washington
+Redmond, Washington
+
+New York City, New York
+
+Boston, Massachusetts
+Cambridge, Massachusetts
+
+Austin, Texas
+Dallas, Texas
+Houston, Texas
+
+Chicago, Illinois
+
+Denver, Colorado
+
+Atlanta, Georgia
+
+Raleigh, North Carolina
+Durham, North Carolina
+
+Salt Lake City, Utah
+
+Portland, Oregon
+
+San Diego, California
+
+Los Angeles, California
+
+========================================
+CANADA
+========================================
+
+Remote
+Toronto
+Waterloo
+Ottawa
+Vancouver
+Montreal
+Calgary
+Edmonton
+
+========================================
+UNITED KINGDOM
+========================================
+
+Remote
+London
+Manchester
+Bristol
+Cambridge
+Edinburgh
+Glasgow
+Birmingham
+Leeds
+Oxford
+
+========================================
+IRELAND
+========================================
+
+Remote
+Dublin
+Cork
+Galway
+Limerick
+
+========================================
+NETHERLANDS
+========================================
+
+Remote
+Amsterdam
+Rotterdam
+Utrecht
+Eindhoven
+The Hague
+
+========================================
+GERMANY
+========================================
+
+Remote
+Berlin
+Munich
+Hamburg
+Frankfurt
+Cologne
+Stuttgart
+
+========================================
+SWEDEN
+========================================
+
+Remote
+Stockholm
+Gothenburg
+Malmö
+
+========================================
+DENMARK
+========================================
+
+Remote
+Copenhagen
+Aarhus
+
+========================================
+NORWAY
+========================================
+
+Remote
+Oslo
+Bergen
+
+========================================
+FINLAND
+========================================
+
+Remote
+Helsinki
+Espoo
+Tampere
+
+========================================
+ESTONIA
+========================================
+
+Remote
+Tallinn
+
+========================================
+POLAND
+========================================
+
+Remote
+Warsaw
+Kraków
+Wrocław
+Gdańsk
+Poznań
+
+========================================
+PORTUGAL
+========================================
+
+Remote
+Lisbon
+Porto
+Braga
+
+========================================
+BELGIUM
+========================================
+
+Remote
+Brussels
+Antwerp
+Ghent
+
+========================================
+SWITZERLAND
+========================================
+
+Remote
+Zurich
+Geneva
+Basel
+
+========================================
+AUSTRIA
+========================================
+
+Remote
+Vienna
+Graz
+
+========================================
+CZECH REPUBLIC
+========================================
+
+Remote
+Prague
+Brno
+
+========================================
+SINGAPORE
+========================================
+
+Remote
+Singapore
+
+========================================
+AUSTRALIA
+========================================
+
+Remote
+Sydney
+Melbourne
+Brisbane
+Perth
+Adelaide
+
+========================================
+NEW ZEALAND
+========================================
+
+Remote
+Auckland
+Wellington
+Christchurch
+
+========================================
+UNITED ARAB EMIRATES
+========================================
+
+Remote
+Dubai
+Abu Dhabi
