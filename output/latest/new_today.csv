@@ -1,4 +1,0 @@
-name,website,domain,city,region,source,careersPage,emails,phones,linkedin,github,matchScore,matchedKeywords,firstSeen,newToday
-"GitLab","https://about.gitlab.com","about.gitlab.com","San Francisco","USA","sample","","","","","","0","","2026-08-01","true"
-"PostHog","https://posthog.com","posthog.com","London","Europe","sample","","","","","","0","","2026-08-01","true"
-"Sentry","https://sentry.io","sentry.io","San Francisco","USA","sample","","","","","","0","","2026-08-01","true"
